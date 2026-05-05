@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://br4jbbeyivx5l" path="res://Scenes/platform.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bsym3ykbwu5g0" path="res://Scenes/coin.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://cu7k32ox7yqar" path="res://Scenes/killzone.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://co7ppv1mj4qnc" path="res://Scenes/Characters/enemy_slime.tscn" id="6_21xkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dkf5"]
 texture = ExtResource("2_8gbba")
@@ -295,6 +296,36 @@ position = Vector2(882, 95)
 [node name="Coin17" parent="Coins" unique_id=982054317 instance=ExtResource("4_jjvhh")]
 position = Vector2(814, 96)
 
+[node name="Coin18" parent="Coins" unique_id=1821105092 instance=ExtResource("4_jjvhh")]
+position = Vector2(1226, 60)
+
+[node name="Coin19" parent="Coins" unique_id=1235100537 instance=ExtResource("4_jjvhh")]
+position = Vector2(1498, 40)
+
+[node name="Coin20" parent="Coins" unique_id=1640093193 instance=ExtResource("4_jjvhh")]
+position = Vector2(1471, 40)
+
+[node name="Coin21" parent="Coins" unique_id=284828995 instance=ExtResource("4_jjvhh")]
+position = Vector2(1523, 40)
+
+[node name="Coin22" parent="Coins" unique_id=1078148370 instance=ExtResource("4_jjvhh")]
+position = Vector2(1644, 22)
+
+[node name="Coin23" parent="Coins" unique_id=1007916602 instance=ExtResource("4_jjvhh")]
+position = Vector2(1444, -120)
+
+[node name="Coin24" parent="Coins" unique_id=616580721 instance=ExtResource("4_jjvhh")]
+position = Vector2(1489, -120)
+
+[node name="Coin25" parent="Coins" unique_id=1088596189 instance=ExtResource("4_jjvhh")]
+position = Vector2(1305, -65)
+
+[node name="Coin26" parent="Coins" unique_id=562269889 instance=ExtResource("4_jjvhh")]
+position = Vector2(1731, 5)
+
+[node name="Coin27" parent="Coins" unique_id=941081086 instance=ExtResource("4_jjvhh")]
+position = Vector2(1712, 5)
+
 [node name="Platforms" type="Node" parent="." unique_id=1018363211]
 
 [node name="Platform" parent="Platforms" unique_id=1098957981 instance=ExtResource("3_8gbba")]
@@ -319,32 +350,17 @@ position = Vector2(745, -49)
 [node name="Platform6" parent="Platforms" unique_id=1694527371 instance=ExtResource("3_8gbba")]
 position = Vector2(977, -14)
 
-[node name="Coin" parent="." unique_id=1821105092 instance=ExtResource("4_jjvhh")]
-position = Vector2(1226, 60)
+[node name="Enemy Slime" parent="." unique_id=668730882 instance=ExtResource("6_21xkr")]
+position = Vector2(844, 111)
 
-[node name="Coin2" parent="." unique_id=1235100537 instance=ExtResource("4_jjvhh")]
-position = Vector2(1498, 40)
+[node name="Enemy Slime2" parent="." unique_id=1140968703 instance=ExtResource("6_21xkr")]
+position = Vector2(1225, 80)
 
-[node name="Coin3" parent="." unique_id=1640093193 instance=ExtResource("4_jjvhh")]
-position = Vector2(1471, 40)
+[node name="Enemy Slime3" parent="." unique_id=1656729127 instance=ExtResource("6_21xkr")]
+position = Vector2(1498, 64)
 
-[node name="Coin4" parent="." unique_id=284828995 instance=ExtResource("4_jjvhh")]
-position = Vector2(1523, 40)
+[node name="Enemy Slime4" parent="." unique_id=743206401 instance=ExtResource("6_21xkr")]
+position = Vector2(1642, 48)
 
-[node name="Coin5" parent="." unique_id=1078148370 instance=ExtResource("4_jjvhh")]
-position = Vector2(1644, 22)
-
-[node name="Coin6" parent="." unique_id=1007916602 instance=ExtResource("4_jjvhh")]
-position = Vector2(1444, -120)
-
-[node name="Coin7" parent="." unique_id=616580721 instance=ExtResource("4_jjvhh")]
-position = Vector2(1489, -120)
-
-[node name="Coin8" parent="." unique_id=1088596189 instance=ExtResource("4_jjvhh")]
-position = Vector2(1305, -65)
-
-[node name="Coin9" parent="." unique_id=562269889 instance=ExtResource("4_jjvhh")]
-position = Vector2(1731, 5)
-
-[node name="Coin10" parent="." unique_id=941081086 instance=ExtResource("4_jjvhh")]
-position = Vector2(1712, 5)
+[node name="Enemy Slime5" parent="." unique_id=1430030249 instance=ExtResource("6_21xkr")]
+position = Vector2(1469, -96)
