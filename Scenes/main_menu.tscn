@@ -15,9 +15,13 @@ script = ExtResource("1_28flt")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=841691301]
 modulate = Color(1, 1, 1, 0.5647059)
-layout_mode = 0
-offset_right = 1154.9415
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_right = -0.51452637
+offset_bottom = 2.0
+grow_horizontal = 2
 texture = ExtResource("2_1ehe0")
 expand_mode = 1
 stretch_mode = 4
@@ -50,6 +54,7 @@ offset_bottom = 586.0
 text = "QUIT"
 
 [node name="Back" type="Button" parent="." unique_id=324699875]
+visible = false
 layout_mode = 0
 offset_left = 400.0
 offset_top = 504.0
