@@ -1,10 +1,8 @@
-[gd_scene format=3 uid="uid://ch2jyv38xe2jr"]
+[gd_scene format=3 uid="uid://c8eqp1liguwrr"]
 
-[ext_resource type="Script" uid="uid://carvcimwkid5i" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://clhor3nj7ifum" path="res://Assets/sprites/GameBG.png" id="2_1ehe0"]
 [ext_resource type="AudioStream" uid="uid://c3qkho563e8d2" path="res://Assets/music/time_for_adventure.mp3" id="3_ce3w2"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_48xlc"]
-load_path = "res://.godot/imported/GameBG.png-f74994b8720b7be6fd8c2a2a35d09197.ctex"
 
 [node name="MainMenu" type="Control" unique_id=1430777206]
 layout_mode = 3
@@ -24,7 +22,7 @@ anchor_bottom = 1.0
 offset_right = -0.51452637
 offset_bottom = 2.0
 grow_horizontal = 2
-texture = SubResource("CompressedTexture2D_48xlc")
+texture = ExtResource("2_1ehe0")
 expand_mode = 1
 stretch_mode = 4
 
