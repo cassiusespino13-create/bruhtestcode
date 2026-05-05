@@ -1,12 +1,10 @@
 [gd_scene format=3 uid="uid://cxcw38f4vtl80"]
 
-[ext_resource type="PackedScene" uid="uid://cxnwjgi5awp1l" path="res://Scenes/Characters/Playerbro.tscn" id="1_wtcfe"]
-[ext_resource type="Texture2D" uid="uid://wrongk4fxog2" path="res://Assets/sprites/world_tileset.png" id="2_2m74s"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j24c4"]
+[ext_resource type="PackedScene" uid="uid://cxnwjgi5awp1l" path="res://Scenes/Characters/playerbro.tscn" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://wrongk4fxog2" path="res://Assets/sprites/world_tileset.png" id="2_8gbba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dkf5"]
-texture = ExtResource("2_2m74s")
+texture = ExtResource("2_8gbba")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -136,23 +134,19 @@ texture = ExtResource("2_2m74s")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_y4jw1"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_3dkf5")
 
-[node name="Node2D" type="Node2D" unique_id=1338284586]
+[node name="Main" type="Node2D" unique_id=1338284586]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1283003746]
 position = Vector2(82, 37)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=766275674]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1432650952]
-position = Vector2(80, 88)
-shape = SubResource("WorldBoundaryShape2D_j24c4")
-
-[node name="Player" parent="." unique_id=489695771 instance=ExtResource("1_wtcfe")]
+[node name="Player" parent="." unique_id=489695771 instance=ExtResource("1_bo1nx")]
 position = Vector2(82, 61)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=723859390]
 tile_set = SubResource("TileSet_y4jw1")
 format = 2
-layer_0/tile_data = PackedInt32Array(524290, 0, 2, 524291, 0, 2, 524292, 0, 2, 524293, 0, 2, 524294, 0, 2, 524295, 0, 2, 524296, 0, 2, 524297, 0, 2, 458761, 0, 2, 458762, 0, 2)
+layer_0/tile_data = PackedInt32Array(458755, 0, 0, 458754, 0, 0, 262148, 0, 0, 262149, 0, 0, 458758, 0, 0, 458759, 0, 0, 524291, 65536, 0, 524290, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 393221, 65536, 0, 393220, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 524294, 65536, 0, 524295, 65536, 0)
