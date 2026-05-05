@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cxcw38f4vtl80"]
 
+[ext_resource type="Script" uid="uid://dx2cxlt7cpcau" path="res://Scripts/gamemanager.gd" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cxnwjgi5awp1l" path="res://Scenes/Characters/playerbro.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://wrongk4fxog2" path="res://Assets/sprites/world_tileset.png" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://br4jbbeyivx5l" path="res://Scenes/platform.tscn" id="3_8gbba"]
@@ -215,6 +216,10 @@ _data = {
 
 [node name="Main" type="Node2D" unique_id=1338284586]
 
+[node name="Gamemanager" type="Node" parent="." unique_id=1524239289]
+unique_name_in_owner = true
+script = ExtResource("1_6bp64")
+
 [node name="Player" parent="." unique_id=489695771 instance=ExtResource("1_bo1nx")]
 position = Vector2(81, 59)
 
@@ -350,14 +355,16 @@ position = Vector2(745, -49)
 [node name="Platform6" parent="Platforms" unique_id=1694527371 instance=ExtResource("3_8gbba")]
 position = Vector2(977, -14)
 
-[node name="Enemy Slime" parent="." unique_id=668730882 instance=ExtResource("6_21xkr")]
+[node name="Enemies" type="Node" parent="." unique_id=1514331329]
+
+[node name="Enemy Slime" parent="Enemies" unique_id=668730882 instance=ExtResource("6_21xkr")]
 position = Vector2(850, 112)
 
-[node name="Enemy Slime2" parent="." unique_id=1271819036 instance=ExtResource("6_21xkr")]
+[node name="Enemy Slime2" parent="Enemies" unique_id=1271819036 instance=ExtResource("6_21xkr")]
 position = Vector2(1497, 64)
 
-[node name="Enemy Slime3" parent="." unique_id=1510821131 instance=ExtResource("6_21xkr")]
+[node name="Enemy Slime3" parent="Enemies" unique_id=1510821131 instance=ExtResource("6_21xkr")]
 position = Vector2(1643, 48)
 
-[node name="Enemy Slime4" parent="." unique_id=1912877754 instance=ExtResource("6_21xkr")]
+[node name="Enemy Slime4" parent="Enemies" unique_id=1912877754 instance=ExtResource("6_21xkr")]
 position = Vector2(1467, -96)

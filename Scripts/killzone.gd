@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var timer = $Timer
+const PLAYERBRO = preload("uid://cxnwjgi5awp1l")
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Dead, stupid...")
