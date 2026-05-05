@@ -2,9 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cxnwjgi5awp1l" path="res://Scenes/Characters/playerbro.tscn" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://wrongk4fxog2" path="res://Assets/sprites/world_tileset.png" id="2_8gbba"]
-[ext_resource type="PackedScene" uid="uid://br4jbbeyivx5l" path="res://Scenes/platform.tscn" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://bsym3ykbwu5g0" path="res://Scenes/coin.tscn" id="4_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://cu7k32ox7yqar" path="res://Scenes/killzone.tscn" id="5_kry3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dkf5"]
 texture = ExtResource("2_8gbba")
@@ -172,46 +169,6 @@ texture = ExtResource("2_8gbba")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3dkf5")
 
-[sub_resource type="Animation" id="Animation_8gbba"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(434, 132)]
-}
-
-[sub_resource type="Animation" id="Animation_jjvhh"]
-resource_name = "move1"
-length = 1.9666667
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(537, 132), Vector2(434, 132)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kry3j"]
-_data = {
-&"RESET": SubResource("Animation_8gbba"),
-&"move1": SubResource("Animation_jjvhh")
-}
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_21xkr"]
-
 [node name="Main" type="Node2D" unique_id=1338284586]
 
 [node name="Player" parent="." unique_id=489695771 instance=ExtResource("1_bo1nx")]
@@ -219,65 +176,10 @@ position = Vector2(82, 61)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1283003746]
 position = Vector2(0, -24)
-zoom = Vector2(2, 2)
-limit_left = -10000002
-limit_top = -9999999
-limit_right = 9999998
-limit_bottom = 181
-limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=723859390]
 position = Vector2(1, 0)
 tile_set = SubResource("TileSet_y4jw1")
 format = 2
-layer_0/tile_data = PackedInt32Array(458755, 65536, 1, 458754, 65536, 0, 262148, 0, 0, 262149, 0, 0, 458758, 65536, 1, 458759, 65536, 0, 524291, 65536, 0, 524290, 65536, 1, 458756, 0, 1, 458757, 0, 1, 393221, 0, 1, 393220, 0, 1, 327684, 0, 1, 327685, 0, 1, 524294, 65536, 0, 524295, 65536, 1, 524298, 65536, 0, 393227, 0, 0, 524300, 65536, 1, 524303, 65536, 1, 393232, 0, 0, 524305, 65536, 0, 524306, 589824, 0, 524308, 655360, 0, 524307, 655360, 0, 524309, 720896, 0, 524310, 65536, 0, 524312, 65536, 1, 458763, 0, 1, 458768, 0, 1, 458775, 0, 1, 393239, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 589859, 65536, 1, 589860, 65536, 0, 589861, 0, 1, 589862, 0, 1, 458791, 0, 0, 393256, 0, 0, 327721, 0, 0, 196650, 0, 0, 196651, 0, 0, 196652, 0, 0, 262186, 0, 1, 327722, 0, 1, 393258, 0, 1, 393257, 0, 1, 458793, 0, 1, 458792, 0, 1, 524328, 65536, 1, 524327, 0, 1, 589863, 65536, 1, 589864, 65536, 1, 589865, 0, 1, 524329, 0, 1, 458794, 0, 1, 393259, 0, 1, 327723, 0, 1, 262187, 0, 1, 262188, 65536, 1, 327724, 65536, 1, 393260, 0, 1, 458796, 0, 1, 524332, 65536, 0, 524331, 65536, 0, 589867, 0, 1, 589866, 0, 1, 524330, 0, 1, 458795, 65536, 0, 589868, 65536, 0)
-
-[node name="Platform" parent="." unique_id=1098957981 instance=ExtResource("3_8gbba")]
-position = Vector2(138, 35)
-
-[node name="Platform2" parent="." unique_id=121555302 instance=ExtResource("3_8gbba")]
-position = Vector2(434, 132)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2" unique_id=844958574]
-libraries/ = SubResource("AnimationLibrary_kry3j")
-autoplay = &"move1"
-
-[node name="Coin" parent="." unique_id=810436433 instance=ExtResource("4_jjvhh")]
-position = Vector2(184, 80)
-
-[node name="Coin2" parent="." unique_id=919808929 instance=ExtResource("4_jjvhh")]
-position = Vector2(184, 64)
-
-[node name="Coin3" parent="." unique_id=741102889 instance=ExtResource("4_jjvhh")]
-position = Vector2(184, 45)
-
-[node name="Coin4" parent="." unique_id=1034528236 instance=ExtResource("4_jjvhh")]
-position = Vector2(265, 82)
-
-[node name="Coin5" parent="." unique_id=2126733631 instance=ExtResource("4_jjvhh")]
-position = Vector2(266, 63)
-
-[node name="Coin6" parent="." unique_id=1516394149 instance=ExtResource("4_jjvhh")]
-position = Vector2(265, 42)
-
-[node name="Coin7" parent="." unique_id=1090220413 instance=ExtResource("4_jjvhh")]
-position = Vector2(376, 83)
-
-[node name="Coin8" parent="." unique_id=1659843447 instance=ExtResource("4_jjvhh")]
-position = Vector2(388, 65)
-
-[node name="Coin9" parent="." unique_id=1465176672 instance=ExtResource("4_jjvhh")]
-position = Vector2(409, 59)
-
-[node name="Coin10" parent="." unique_id=1020518048 instance=ExtResource("4_jjvhh")]
-position = Vector2(427, 81)
-
-[node name="Coin11" parent="." unique_id=2063297857 instance=ExtResource("4_jjvhh")]
-position = Vector2(437, 104)
-
-[node name="Killzone" parent="." unique_id=382757247 instance=ExtResource("5_kry3j")]
-position = Vector2(123, 182)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1756102257]
-shape = SubResource("WorldBoundaryShape2D_21xkr")
+layer_0/tile_data = PackedInt32Array(458755, 0, 0, 458754, 0, 0, 262148, 0, 0, 262149, 0, 0, 458758, 0, 0, 458759, 0, 0, 524291, 65536, 0, 524290, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 393221, 65536, 0, 393220, 65536, 0, 327684, 65536, 0, 327685, 65536, 0, 524294, 65536, 0, 524295, 65536, 0, 524298, 0, 0, 393227, 0, 0, 524300, 0, 0, 524303, 0, 0, 393232, 0, 0, 524305, 0, 0, 524306, 589824, 0, 524308, 655360, 0, 524307, 655360, 0, 524309, 720896, 0, 524310, 0, 0, 524312, 0, 0, 458763, 65536, 0, 458768, 65536, 0, 458775, 65536, 0, 393239, 0, 0)
