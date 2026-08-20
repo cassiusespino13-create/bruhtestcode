@@ -2,7 +2,7 @@ extends State
 
 class_name JumpState
 
-var JUMP_SPEED = -350
+var JUMP_SPEED = -450
 # Called when the node enters the scene tree for the first time.
 func enter():
 	var character = state_machine.get_parent()
