@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://xkyhcm0a15ec"]
+
+[ext_resource type="Texture2D" uid="uid://cqdx7xoqdy46f" path="res://icon.svg" id="1_tvfhn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vvbkq"]
+radius = 5.0
+height = 12.0
+
+[node name="Playerbro2" type="CharacterBody2D" unique_id=51038375]
+z_index = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1772593667]
+position = Vector2(-3.8146973e-06, -5.000004)
+scale = Vector2(0.078125, 0.078125)
+texture = ExtResource("1_tvfhn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1977748972]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_vvbkq")

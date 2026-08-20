@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cxcw38f4vtl80"]
 
 [ext_resource type="Script" uid="uid://dx2cxlt7cpcau" path="res://Scripts/gamemanager.gd" id="1_6bp64"]
-[ext_resource type="PackedScene" uid="uid://cxnwjgi5awp1l" path="res://Scenes/Characters/playerbro.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://xkyhcm0a15ec" path="res://Scenes/Characters/playerbro2.tscn" id="2_6bp64"]
 [ext_resource type="Texture2D" uid="uid://wrongk4fxog2" path="res://Assets/sprites/world_tileset.png" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://bfjumqpvycued" path="res://Scenes/Characters/playerbro_2.gd" id="3_6iyac"]
 [ext_resource type="PackedScene" uid="uid://br4jbbeyivx5l" path="res://Scenes/platform.tscn" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://dp0pcy3eumvf0" path="res://Scripts/States/state_machine.gd" id="3_d1ilt"]
+[ext_resource type="Script" uid="uid://qv2dst3oolc7" path="res://Scripts/States/idle_state.gd" id="4_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bsym3ykbwu5g0" path="res://Scenes/coin.tscn" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://cmrc7u7u3aa1f" path="res://Scripts/States/jump_state.gd" id="5_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cu7k32ox7yqar" path="res://Scenes/killzone.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://co7ppv1mj4qnc" path="res://Scenes/Characters/enemy_slime.tscn" id="6_21xkr"]
+[ext_resource type="Script" uid="uid://d1kdgmywnxjqg" path="res://Scripts/States/walk_state.gd" id="6_jkdf5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dkf5"]
 texture = ExtResource("2_8gbba")
@@ -220,17 +225,30 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("1_6bp64")
 
-[node name="Player" parent="." unique_id=489695771 instance=ExtResource("1_bo1nx")]
-position = Vector2(81, 59)
+[node name="Playerbro2" parent="." unique_id=51038375 instance=ExtResource("2_6bp64")]
+position = Vector2(81, 64)
+script = ExtResource("3_6iyac")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1283003746]
-position = Vector2(0, -24)
+[node name="StateMachine" type="Node" parent="Playerbro2" unique_id=107066670 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_d1ilt")
+initial_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://dp0pcy3eumvf0"
+
+[node name="IdleState" type="Node" parent="Playerbro2/StateMachine" unique_id=664424516]
+script = ExtResource("4_6iyac")
+metadata/_custom_type_script = "uid://qv2dst3oolc7"
+
+[node name="JumpState" type="Node" parent="Playerbro2/StateMachine" unique_id=284073956]
+script = ExtResource("5_fdnlq")
+metadata/_custom_type_script = "uid://cmrc7u7u3aa1f"
+
+[node name="WalkState" type="Node" parent="Playerbro2/StateMachine" unique_id=881948454]
+script = ExtResource("6_jkdf5")
+metadata/_custom_type_script = "uid://d1kdgmywnxjqg"
+
+[node name="Camera2D" type="Camera2D" parent="Playerbro2" unique_id=1471145672]
 zoom = Vector2(2, 2)
-limit_left = -10000002
-limit_top = -9999999
-limit_right = 9999998
-limit_bottom = 181
-limit_smoothed = true
+limit_bottom = 200
 position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="." unique_id=723859390]
