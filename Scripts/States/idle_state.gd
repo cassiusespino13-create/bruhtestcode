@@ -1,10 +1,11 @@
 extends State
 
 class_name IdleState
-# Called when the node enters the scene tree for the first time.
+
 func enter():
 	print("entering idle state")
 
+# physics update function is optional. this func adds gravity and stops horizontal movement
 func physics_update(delta):
 	var character = state_machine.get_parent()
 	character.velocity.y += 980 * delta

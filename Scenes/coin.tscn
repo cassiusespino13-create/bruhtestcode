@@ -99,6 +99,8 @@ animations = [{
 radius = 6.0
 
 [node name="Coin" type="Area2D" unique_id=810436433]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jgi06")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1600567318]

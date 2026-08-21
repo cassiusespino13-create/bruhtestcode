@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://lqvxiybwooiu" path="res://Scripts/killzone.gd" id="1_jvagm"]
 
 [node name="Killzone" type="Area2D" unique_id=382757247]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_jvagm")
 
 [node name="Timer" type="Timer" parent="." unique_id=48979345]
