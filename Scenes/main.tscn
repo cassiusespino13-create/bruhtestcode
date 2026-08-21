@@ -265,6 +265,8 @@ layer_1/tile_data = PackedInt32Array(458755, 65536, 1, 458754, 65536, 0, 262148,
 [node name="Killzone" parent="." unique_id=382757247 instance=ExtResource("5_kry3j")]
 unique_name_in_owner = true
 position = Vector2(128, 182)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1756102257]
 shape = SubResource("WorldBoundaryShape2D_21xkr")
@@ -389,3 +391,14 @@ position = Vector2(1643, 48)
 
 [node name="Enemy Slime4" parent="Enemies" unique_id=1912877754 instance=ExtResource("6_21xkr")]
 position = Vector2(1467, -96)
+
+[connection signal="total_score2" from="Killzone" to="Gamemanager" method="_on_killzone_total_score_2"]
+[connection signal="total_score2" from="Enemies/Enemy Slime/Killzone" to="Gamemanager" method="_on_killzone_total_score_2"]
+[connection signal="total_score2" from="Enemies/Enemy Slime2/Killzone" to="Gamemanager" method="_on_killzone_total_score_2"]
+[connection signal="total_score2" from="Enemies/Enemy Slime3/Killzone" to="Gamemanager" method="_on_killzone_total_score_2"]
+[connection signal="total_score2" from="Enemies/Enemy Slime4/Killzone" to="Gamemanager" method="_on_killzone_total_score_2"]
+
+[editable path="Enemies/Enemy Slime"]
+[editable path="Enemies/Enemy Slime2"]
+[editable path="Enemies/Enemy Slime3"]
+[editable path="Enemies/Enemy Slime4"]
